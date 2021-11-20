@@ -16,40 +16,6 @@
             <img class="bgc" src="./img/32051.jpg" width="100%" alt="">
         </div>
     </div>
-    <!-- <canvas id="can" width="500" height="500"></canvas> -->
-    <script>
-        var can=document.getElementById('can')//获取对象
-        var pen=can.getContext('2d');//在画布中创建一个2d画笔
-
-        //x为水平方向的坐标    .fillRect(x,y,width,height)
-       //y为垂直方向的坐标
-        var x=y=0;
-        pen.fillRect(x,y,100,100); //绘制一个大小为100'被填充的'矩形
-
-        document.onkeydown=function(even){     //绑定按键事件
-            if(even.keyCode>=37&&even.keyCode<=40){    //判断按下的键值是否在37~40之间
-                pen.clearRect(x,y,100,100);       //擦除上一个图形
-                switch(even.keyCode){             //匹配按下的键值
-                    case 37:x=x-10;break;       //左       每次移动10
-                    case 38:y=y-10;break;       //上
-                    case 39:x=x+10;break;       //右
-                    case 40:y=y+10;break;       //下
-                }
-                //边界判断
-               if(x<0){         
-                   x=0;
-               }else if(x>400){
-               x=400;
-               }
-               if(y<0){
-                   y=0;
-               }else if(y>400){
-                   y=400;
-               }
-               pen.fillRect(x,y,100,100);
-            }
-        }
-    </script>
 </body>
 <script>
     (function () {
